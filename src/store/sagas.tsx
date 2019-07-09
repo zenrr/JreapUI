@@ -1,5 +1,5 @@
-import { put, takeEvery } from 'redux-saga/effects';
-import { IS_NEW_UESR_LODING ,  GET_LOGIN_INFO ,CHANGE_USERNAME , CHANGE_PASSWORD , LOGIN} from '../core/login/actionTypes'
+import { takeEvery } from 'redux-saga/effects';
+import { GET_LOGIN_INFO } from '../core/login/actionTypes'
 
 import {getLoginInfo} from "../core/login/sagas";
 

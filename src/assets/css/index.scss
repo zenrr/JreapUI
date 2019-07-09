@@ -29,3 +29,38 @@
         }
     }
 }
+.j-lookup{
+    height:75px;
+    border-radius: 5px;
+    padding: 5px;
+    border:1px solid #dbdbdb;
+    .search_icon{
+        position: absolute;
+        right: 10px;
+        top: 55px;
+    }
+    .lookup_palen{
+        height: 100%;
+        width: calc(100% - 30px);
+        p{
+            background: #f3f3f3;
+            float: left;
+            padding: 5px;
+            margin:4px 3px;
+            border-radius: 5px;
+            font-size: 14px;
+            span{
+                margin: 5px
+            }
+        }
+    }
+    &:hover{
+        border-color: #1890ff
+    }
+}
+.j_l_s_panel{
+    .ant-drawer-body{
+        height:calc(100% - 108px);
+        display: block
+    }
+}

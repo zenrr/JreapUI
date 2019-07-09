@@ -11,9 +11,9 @@ export default function createMessage(data:JreapMessage):JreapMessagePromise{
             }
             let _Html;
             if(animation && animation){
-                _Html = "<a class='j-message"+ animation + "' style='z-index:99999;'></a>"
+                _Html = "<a class='j-message"+ animation + "' style='z-index:9999;'></a>"
             } else {
-                _Html = "<div class='j-message "+ type  +"' style='z-index:99999;'><i class ='iconfont icon-k-i-stop'></i>"+ msg + "</div>"
+                _Html = "<div class='j-message "+ type  +"' style='z-index:9999;'><i class ='iconfont icon-k-i-stop'></i>"+ msg + "</div>"
             }
             let element:HTMLElement = document.createElement("div");
             element.className = "alert jInfo"
@@ -21,6 +21,7 @@ export default function createMessage(data:JreapMessage):JreapMessagePromise{
             element.style.position = "fixed";
             element.style.top =  (top) ? top : "45%";
             element.style.right = (left) ? left : "45%";
+            element.style.zIndex= '10003';
             document.body.appendChild(element);
             // 一秒以后关闭
             setTimeout(() => {

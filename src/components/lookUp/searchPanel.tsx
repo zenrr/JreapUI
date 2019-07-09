@@ -1,11 +1,8 @@
 import * as React from 'react';
 import { Icon , Tooltip , Tree , Table, Divider, Tag  } from 'antd';
-import { _props , LookUpInfo } from './type';
+import { _props , LookUpInfo ,TreeDataInfo } from './type';
 import ScrollView from 'react-custom-scrollbars';
 import { LookUp_Table, List_Panel } from './style';
-import lookUpService from './service'
-
-const qs = require('qs');
 
 const { TreeNode } = Tree;
 
@@ -105,10 +102,9 @@ class SearchPanel extends React.Component<_props , LookUpInfo> {
             </React.Fragment>
         )
     } 
-    renderTreeNodes(data){
-        console.log(data)
+    renderTreeNodes(data:TreeDataInfo):any{
         return (
-            data.map(item => {
+            data.map( (item:TreeDataInfo) => {
                 if ( item.hasChild ) {
                     return (
                     <TreeNode title={item.name} key={item.key} dataRef={item} >

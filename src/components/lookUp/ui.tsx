@@ -4,7 +4,7 @@ import { _props } from './type';
 import ScrollView from 'react-custom-scrollbars';
 import SearchPanel from './searchPanel'
 
-const LookUpUI= (props:any) => {
+const LookUpUI= (props:_props) => {
     return (
         <div className={ 'j-lookup' } >
             <div className={'lookup_palen'}> 
@@ -24,7 +24,7 @@ const LookUpUI= (props:any) => {
                 className = {'j_l_s_panel'}
                 title="Basic Drawer"
                 placement="right"
-                visible={props.openSelectPanel}
+                visible={ props.openSelectPanel }
                 onClose={props.onClose}
                 width={'50%'}
                 bodyStyle={{height:'clac(100% - 108px)'}}

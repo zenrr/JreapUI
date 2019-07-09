@@ -4,7 +4,6 @@ import axios from 'axios';
 import LookUpUI from './ui'
 import { _props , LookUpInfo } from './type';
 import lookUpService from './service'
-import { any } from 'prop-types';
 
 const qs = require('qs');
 
@@ -25,16 +24,15 @@ class LookUP extends React.Component<_props , LookUpInfo> {
                 openSelectPanel = { this.state.show }
                 onClose = { this.onClose.bind(this) }
                 treeData = { this.state.data }
-                onLoad = { this.onLoadData }
+                onLoad = { this.onLoadData}
             />
         )
     }
-    search(){
+    search():void{
         lookUpService.post('/web/right/util/findOrgTree.form', qs.stringify({
             isUnit: 2
         })).then(data =>{
             this.setState({
-                show: true,
                 data:data
             })       
         }).then(() => { 
@@ -43,28 +41,32 @@ class LookUP extends React.Component<_props , LookUpInfo> {
             })
         })
     }
-    onClose(){
+    onClose():void{
         this.setState({
             show: false
         })
     }
-    onLoadData = treeNode =>
-    new Promise(resolve => {
-        if(!treeNode.props.dataRef.hasChild){
-            resolve();
-            return;
-        }
-        lookUpService.post('/web/right/util/findOrgTree.form', qs.stringify({
-            isUnit: 2,
-            id:treeNode.props.dataRef.id
-        })).then(data => {
-            treeNode.props.dataRef.items = data
-            this.setState({
-                data : this.state.data
+    onLoadData(treeNode:any):any{
+        return (
+            new Promise(resolve => {
+                if(treeNode.props.dataRef.hasChild){
+                    resolve();
+                    return;
+                }
+                lookUpService.post('/web/right/util/findOrgTree.form', qs.stringify({
+                    isUnit: 2,
+                    id:treeNode.props.dataRef.id
+                })).then(data => {
+                    treeNode.props.dataRef.items = data
+                    this.setState({
+                        data : this.state.data
+                    })
+                    resolve();
+                })
             })
-            resolve();
-        })
-    })
+        )
+    }
+    
 }
 
 export default LookUP

@@ -38,6 +38,11 @@ lookUpService.interceptors.response.use(
             createMessage({
                 msg:'请求参数不对'
             })
+        }  else if(error.response.status === 504){
+            createMessage({
+                msg:'请求参数不对'
+            })
+            return 
         }
         
     }

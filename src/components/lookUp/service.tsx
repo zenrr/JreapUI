@@ -44,7 +44,6 @@ lookUpService.interceptors.response.use(
             })
             return 
         }
-        
     }
 )
 
@@ -56,7 +55,6 @@ function dataMap (data:any):void{
         }
     })
     return data
-
 }
 
 export default lookUpService

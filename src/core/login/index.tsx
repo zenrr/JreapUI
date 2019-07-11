@@ -6,6 +6,7 @@ import LoginUI from "./view/pc";
 import { mockLogin } from '../../mock';
 import { connect } from 'react-redux';
 import { getNewUserAction ,getLgoinInfoAction , setUserNameAction ,setPassWordAction} from './action'
+import * as d3 from "d3";
 
 mockLogin();
 
@@ -47,6 +48,23 @@ class Login extends React.Component<_props , LoginInfo> {
     }
     public componentDidMount(){
         this.props._getLoginInfo(this.props.userName)
+        const data = [12, 5, 6, 6, 9, 10];
+    
+        const svg = d3.select("#draw")
+        .append("svg")
+        .attr("width", 300)
+        .attr("height", 400)
+        .style("margin-left", 100);
+                        
+        svg.selectAll("rect")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("x", (d, i) => i * 70)
+            .attr("y", (d, i) => 40 - 10 * d)
+            .attr("width", 65)
+            .attr("height", (d, i) => d * 10)
+            .attr("fill", "green")
     }
 
     private login():void{

@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Input , Button , Checkbox , Icon , Tooltip , Drawer} from 'antd';
 import { LoginInfo } from '../../../../types';
-import LookUP from '../../../../components/lookUp'
+import LookUP from '../../../../components/lookUp';
+
+
 require.context("../../../../assets/images/menuIcon",true, /^\.\/.*\.png$/);
 
 interface _props {
@@ -18,7 +20,8 @@ const LoginUI= (props:_props) => {
     return (
         <div className="login-plane">
             <LookUP />
-            
+            <div id="draw">
+            </div>
             <div className="login-line">
                 {
                     showUser(props)

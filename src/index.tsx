@@ -8,4 +8,4 @@ import 'antd/dist/antd.css';
 
 
 
-ReactDOM.render(<BpmEditor />, document.getElementById('root') as HTMLElement);
+ReactDOM.render(<App />, document.getElementById('root') as HTMLElement);

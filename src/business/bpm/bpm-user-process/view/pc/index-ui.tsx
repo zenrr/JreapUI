@@ -3,7 +3,7 @@ import { Card,Tabs, } from 'antd';
 
 const {TabPane}  = Tabs
 
-const BPMUserUI: React.FC<any> = ({state}) => {
+const IndexUI: React.FC<any> = ({state}) => {
     return (
         <div className="container">
         <Card>
@@ -21,4 +21,4 @@ const BPMUserUI: React.FC<any> = ({state}) => {
     )
 }
 
-export default BPMUserUI
+export default IndexUI

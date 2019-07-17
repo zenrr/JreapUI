@@ -1,0 +1,41 @@
+import * as React from 'react';
+import { HashRouter , BrowserRouter,  Route, Link } from 'react-router-dom';
+import { Provider } from "react-redux";
+import store from "./store";
+import './assets/css/index.scss';
+import 'antd/dist/antd.css';
+import routes from './routes/routes';
+
+
+class App extends React.Component {
+	render() {
+	  return (
+		<Provider store={store}>
+			<HashRouter>
+				<div className='mainPage'>
+					
+					{
+						routes.map((route, index) => {
+							if(route.noFrame){
+								return <Route key={index} exact={route.exact} path={route.path} />
+							} else {
+							return <Route key={index} exact={route.exact} path={route.path} 
+								render={props => (
+									<div>
+									头部
+									return <Route key={index} exact={route.exact} path={route.path} />
+									底部
+									</div>
+								)}
+								/>
+							}
+						})
+					}
+				</div>
+			</HashRouter>
+		</Provider>
+	  )
+	}
+}
+
+export default App;

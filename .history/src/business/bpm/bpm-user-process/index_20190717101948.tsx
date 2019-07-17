@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { BpmUserProcessState } from '../../../types/bpm';
 import BPMUserUI from './view/pc';
+import console = require('console');
 
 interface method {
     createPanel(): void 
@@ -18,7 +19,7 @@ class Index extends React.Component {
 }
 
 const mapStateToProps = (state:any): BpmUserProcessState => {
-    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state.bpmReducer;
+    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state;
     console.log(state)
 	return {
         TabDefaultKeyState: TabDefaultKeyState,

@@ -9,6 +9,7 @@ interface method {
 class Index extends React.Component {
     
     render() {
+        console.log(this.props)
         return (
            <BPMUserUI 
                 state = {this.props}
@@ -18,8 +19,7 @@ class Index extends React.Component {
 }
 
 const mapStateToProps = (state:any): BpmUserProcessState => {
-    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state.bpmReducer;
-    console.log(state)
+    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state;
 	return {
         TabDefaultKeyState: TabDefaultKeyState,
         UserProcessTabComponnetState: UserProcessTabComponnetState

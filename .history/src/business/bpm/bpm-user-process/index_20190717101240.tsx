@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Card, Tabs } from 'antd';
 import { connect } from 'react-redux';
 import { BpmUserProcessState } from '../../../types/bpm';
 import BPMUserUI from './view/pc';
@@ -9,6 +10,7 @@ interface method {
 class Index extends React.Component {
     
     render() {
+        console.log(this.props)
         return (
            <BPMUserUI 
                 state = {this.props}
@@ -18,8 +20,7 @@ class Index extends React.Component {
 }
 
 const mapStateToProps = (state:any): BpmUserProcessState => {
-    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state.bpmReducer;
-    console.log(state)
+    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state;
 	return {
         TabDefaultKeyState: TabDefaultKeyState,
         UserProcessTabComponnetState: UserProcessTabComponnetState

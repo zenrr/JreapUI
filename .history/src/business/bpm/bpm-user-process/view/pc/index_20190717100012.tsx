@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Card,Tabs, } from 'antd';
+import { Collapse,Card,Tabs, } from 'antd';
 
 const {TabPane}  = Tabs
 

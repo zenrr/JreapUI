@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import './assets/css/index.scss';
 import 'antd/dist/antd.css';
-import Index from './business/bpm/bpm-user-process/index'
+import Login from './core/login'
 
 
 export default class App extends React.Component {
@@ -13,7 +13,7 @@ export default class App extends React.Component {
 		<Provider store={store}>
 			<HashRouter>
 				<div className='mainPage'>
-					<Route path='/' exact component={Index}></Route>
+					<Route path='/' exact component={Login}></Route>
 				</div>
 			</HashRouter>
 		</Provider>

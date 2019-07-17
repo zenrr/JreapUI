@@ -1,8 +1,12 @@
 import * as React from 'react'
-import { Card,Tabs, } from 'antd';
+import { Collapse,Card,Tabs, } from 'antd';
 
 const {TabPane}  = Tabs
 
+interface BoxMap {
+    [key: string]: { top: number; left: number; title: string }
+  }
+  
 const BPMUserUI: React.FC<any> = ({state}) => {
     return (
         <div className="container">

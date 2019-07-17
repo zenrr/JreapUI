@@ -9,6 +9,7 @@ const BPMUserUI: React.FC<any> = ({state}) => {
         <Card>
             <Tabs defaultActiveKey={state.TabDefaultKeyState}>
                 {
+                    console.log(state)
                     state.UserProcessTabComponnetState.map((item:any, index:number|null) => (
                         <TabPane tab={item.title} key={String(index)}>
                             <item.component></item.component>

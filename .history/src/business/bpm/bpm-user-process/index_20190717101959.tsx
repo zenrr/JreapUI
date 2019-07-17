@@ -18,7 +18,7 @@ class Index extends React.Component {
 }
 
 const mapStateToProps = (state:any): BpmUserProcessState => {
-    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state.bpmReducer;
+    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state;
     console.log(state)
 	return {
         TabDefaultKeyState: TabDefaultKeyState,

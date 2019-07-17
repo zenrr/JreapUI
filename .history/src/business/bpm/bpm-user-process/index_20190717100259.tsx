@@ -1,14 +1,21 @@
 import * as React from 'react';
+import { Card, Tabs } from 'antd';
+import HandledProcess from './handled-process';
+import WaitingProcess from './waiting-process';
+import MyStartProcess from './my-start-process';
 import { connect } from 'react-redux';
 import { BpmUserProcessState } from '../../../types/bpm';
 import BPMUserUI from './view/pc';
+import console = require('console');
 
+const { TabPane } = Tabs;
 interface method {
     createPanel(): void 
 }
 class Index extends React.Component {
     
     render() {
+        console.log(this.props)
         return (
            <BPMUserUI 
                 state = {this.props}
@@ -18,7 +25,7 @@ class Index extends React.Component {
 }
 
 const mapStateToProps = (state:any): BpmUserProcessState => {
-    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state.bpmReducer;
+    const { TabDefaultKeyState, UserProcessTabComponnetState }  = state;
     console.log(state)
 	return {
         TabDefaultKeyState: TabDefaultKeyState,
@@ -29,7 +36,10 @@ const mapStateToProps = (state:any): BpmUserProcessState => {
 //store.dispatch, props
 const mapDispatchToProps = (dispatch:any):method => {
 	return {
-		createPanel:():void => {}
+		createPanel:():void => {
+            // const action = getNewUserAction(true);
+			// dispatch(action);
+        }
 	}
 }
 

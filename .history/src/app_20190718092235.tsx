@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { HashRouter, BrowserRouter, Route, Link, Switch } from 'react-router-dom';
+
 import { Row, Col } from "antd";
 import './assets/css/index.scss';
 import 'antd/dist/antd.css';
@@ -9,7 +10,9 @@ import routes from './routes/routes';
 class App extends React.Component {
 	render() {
 		return (
-				<HashRouter>
+			
+				<BrowserRouter>
+				
 					<div className='mainPage'>
 						<ul style={{ overflow: "hidden", padding: "15px", listStyle: "none" }}>
 							{
@@ -57,8 +60,10 @@ class App extends React.Component {
 							</Route>
 						</Switch>
 							
+						
 					</div>
-				</HashRouter>
+				</BrowserRouter>
+			</Provider>
 		)
 	}
 }

@@ -10,6 +10,7 @@ class App extends React.Component {
 	render() {
 		return (
 				<HashRouter>
+				
 					<div className='mainPage'>
 						<ul style={{ overflow: "hidden", padding: "15px", listStyle: "none" }}>
 							{
@@ -57,6 +58,7 @@ class App extends React.Component {
 							</Route>
 						</Switch>
 							
+						
 					</div>
 				</HashRouter>
 		)

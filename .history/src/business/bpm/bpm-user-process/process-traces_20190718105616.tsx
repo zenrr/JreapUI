@@ -1,6 +1,13 @@
 import React = require('react');
 import { Form, Icon, Input, Button, DatePicker, Row, Col, Card, Avatar, Typography, Drawer } from 'antd';
 
+interface method {
+    switchProcessTraceUI(): void,
+    switchProcessHandleUI(): void,
+    sWitchProcesstransferUI():void,
+    switchProcessIncreaseSignUI(): void,
+    switchProcessReduceSignUI(): void,
+}
 class ProcessTraces extends React.Component {
 
     constructor(props: any) {

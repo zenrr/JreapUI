@@ -18,7 +18,7 @@ const BpmProcessModelIndexUI: React.FC<any> = ({ state }) => {
             <div className="title">
                 <h3>流程模型管理</h3>
             </div>
-            <div className="boolbar" style={{ position: "absolute", top: "15px", left: "120px", fontSize: "16px"}}>
+            <div className="boolbar" style={{ position: "absolute", top: "15px", left: "120px" }}>
                 <div>
                     <a style={{ marginRight: "10px" }}><Icon type="edit" /></a>
                     <a style={{ marginRight: "10px" }}><Icon type="edit" /></a>

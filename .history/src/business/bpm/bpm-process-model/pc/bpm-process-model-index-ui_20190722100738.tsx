@@ -1,7 +1,5 @@
 import * as React from 'react'
-import { Card, Checkbox, Icon, Form, DatePicker, Input, Button } from 'antd';
-
-const { RangePicker } = DatePicker;
+import { Card, Checkbox, Icon } from 'antd';
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 const card: React.CSSProperties = {
@@ -18,22 +16,17 @@ const BpmProcessModelIndexUI: React.FC<any> = ({ state }) => {
             <div className="title">
                 <h3>流程模型管理</h3>
             </div>
-            <div className="boolbar" style={{ position: "absolute", top: "15px", left: "120px", fontSize: "16px"}}>
-                <div>
-                    <a style={{ marginRight: "10px" }}><Icon type="edit" /></a>
-                    <a style={{ marginRight: "10px" }}><Icon type="edit" /></a>
-                    <a style={{ marginRight: "10px" }}><Icon type="edit" /></a>
-                    <a style={{ marginRight: "10px" }}><Icon type="edit" /></a>
-                </div>
+            <div className="boolbar" style={{ position: "absolute", top: "15px", left: "120px" }}>
+                <div>左边工具栏</div>
             </div>
-            <div className="searchbar" style={{ position: "absolute", top: "20px", right: "15px" }}>
+            <div className="searchbar" style={{ position: "absolute", top: "15px", right: "15px" }}>
                 <div>
                     <Form layout="inline">
                         <Form.Item>
                             <RangePicker placeholder={["请选择开始时间", "请选择结束时间"]} />
                         </Form.Item>
                         <Form.Item>
-                            <Input placeholder="请输入流程名称" />
+                            <Input placeholder="请输入姓名" />
                         </Form.Item>
                         <Form.Item>
                             <Button type="primary" htmlType="submit">查询</Button>

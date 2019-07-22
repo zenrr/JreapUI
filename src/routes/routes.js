@@ -1,5 +1,6 @@
 import Index from '../business/bpm/bpm-user-process'
 import TestLogin from '../core/login/Test';
+import Login from '../core/login'
 
 const routes = [
     { 
@@ -13,9 +14,9 @@ const routes = [
         path: "/login", 
         title: "登录",
         exact: true, 
-        component: TestLogin,
+        component: Login,
         noFrame: true
-    },
+    }
  ];
 
  export default routes;

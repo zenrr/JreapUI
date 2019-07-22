@@ -1,0 +1,1 @@
+export const CREATE_BPM_ACTION_TABS:string = "create_bpm_action_tabs"; //创建流程事件tabs
